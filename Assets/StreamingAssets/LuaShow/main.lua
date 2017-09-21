@@ -1,0 +1,1 @@
+function main() print('hello LuaShow！') end
