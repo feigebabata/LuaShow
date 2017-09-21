@@ -32,7 +32,7 @@ public class XLuaBehaviour : MonoBehaviour {
 	private Action luaOnBecameInvisible;
 	private Action luaOnBecameVisible;
 
-    private LuaTable scriptEnv;
+    public LuaTable scriptEnv;
 
 	public void Init(string luaScript)
 	{
