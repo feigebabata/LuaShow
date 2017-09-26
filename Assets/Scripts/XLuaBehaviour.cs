@@ -70,9 +70,7 @@ public class XLuaBehaviour : MonoBehaviour {
 
 	public void InitByFile(string path)
 	{
-		string luaScript = "";
-
-		Init (luaScript);
+		CSTools.Instance.LoadText(path,Init);
 	}
 	void OnEnable()
 	{

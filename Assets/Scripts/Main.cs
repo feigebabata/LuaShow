@@ -17,7 +17,7 @@ public class Main : MonoBehaviour {
 		if(!Directory.Exists(CSTools.GetPlatformPath()))
 		{
 			Directory.CreateDirectory (CSTools.GetPlatformPath());
-			FileStream fs = new FileStream(CSTools.GetPlatformPath()+"/main.lua", FileMode.Create);
+			FileStream fs = new FileStream(CSTools.GetPlatformPath()+"/Main.lua", FileMode.Create);
 			StreamWriter sw = new StreamWriter(fs);
 			string text = "function main() print('hello LuaShow！') end";
 			sw.Write(text);
@@ -26,14 +26,14 @@ public class Main : MonoBehaviour {
 			fs.Close();
 		}
 		LuaEnv luaEnv = new LuaEnv ();
-		CSTools.Instance.LoadText ("main.lua", (luaScript) => {
+		CSTools.Instance.LoadText ("Main.lua", (luaScript) => {
 			LuaTable scriptEnv = luaEnv.NewTable ();
 			LuaTable meta = luaEnv.NewTable ();
 			meta.Set ("__index", luaEnv.Global);
 			scriptEnv.SetMetaTable (meta);
 			meta.Dispose ();
 			scriptEnv.Set ("self", this);
-			luaEnv.DoString (luaScript, "main.lua", scriptEnv);
+			luaEnv.DoString (luaScript, "Main.lua", scriptEnv);
 			Action luaMain = scriptEnv.Get<Action> ("main");
 			luaMain ();
 		});

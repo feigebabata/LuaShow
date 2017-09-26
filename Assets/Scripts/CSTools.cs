@@ -89,7 +89,7 @@ public class CSTools :MonoBehaviour
 			Debug.LogError (path + ". 加载失败！");
 		}
 	}
-
+/*
 	public static void CopyDir(string fromDir, string toDir)
 	{
 		if (!Directory.Exists(fromDir))
@@ -124,4 +124,5 @@ public class CSTools :MonoBehaviour
 		CopyDir(fromDir, toDir);
 		Directory.Delete(fromDir, true);
 	}
+*/
 }
